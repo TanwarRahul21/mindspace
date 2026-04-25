@@ -28,7 +28,9 @@
   };
 
   // ═══════════ API HELPERS ═══════════
-  const API_BASE = '/api';
+  const API_BASE = window.location.hostname === 'localhost'
+    ? '/api'
+    : 'https://mindspace-l05o.onrender.com/api';
 
   async function apiRequest(endpoint, options = {}) {
     const config = {
